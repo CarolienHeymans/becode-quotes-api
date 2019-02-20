@@ -23,11 +23,10 @@ const searchByName = (quotes) => {
 
 }
 const random = () => {
-    fetch('/quotes/')
+    fetch('/quotes/random')
         .then(response => response.json())
         .then(json => getRandomQuote(json))
 }
-const getRandomQuote = (quotes) => { //random
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    console.log(randomQuote)
-    document.getElementById(`randomQuote`).innerHTML = randomQuote.quote}
+const getRandomQuote = (quote) => { //random
+      console.log(quote)
+    document.getElementById(`randomQuote`).innerHTML = quote.quote}

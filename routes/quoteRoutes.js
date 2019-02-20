@@ -2,11 +2,11 @@ const express = require("express");
 let Quote = require('../models/model')
 
 module.exports = app => {
-  app.get('/',function(req,res){
+  app.get('/', function (req, res) {
     res.sendfile('index.html')
   })
 
-  app.get('/quotes', function (req, res) {
+  app.get('/quotes', (req, res) => {
     Quote.find((err, quotes) => {
       if (err) {
         res.send(err)
@@ -14,6 +14,16 @@ module.exports = app => {
       res.json(quotes)
     })
   });
+  app.get('/quotes/random', (req, res) => {
+    Quote.find((err, quotes) => {
+      if (err) {
+        res.send(err)
+      }
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      res.send(randomQuote);
+    })
+  });
+
 
   app.post("/quotes", (req, res) => {
 
