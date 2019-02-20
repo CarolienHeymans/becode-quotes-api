@@ -1,7 +1,7 @@
 const wrapWithTag = (quote, name, book, tagname) => `<${tagname}>${quote} - ${name} - ${book}</${tagname}>`;
 const Search = () => {
     let searchByName = document.getElementById("search").value
-    fetch('http://localhost:5000/quotes/' + searchByName)
+    fetch('/quotes/' + searchByName)
         .then(response => response.json())
         .then(json => getQuote(json))
 }
