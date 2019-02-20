@@ -8,7 +8,8 @@ const app = express();
 app.use(cors());
 
 app.use(bodyParser.json());
-require("../routes/quoteRoutes")(app);
+app.use(express.static('public'));
+require("./routes/quoteRoutes")(app);
 
 const PORT = process.env.PORT||5000;
 

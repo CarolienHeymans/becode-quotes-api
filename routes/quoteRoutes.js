@@ -2,6 +2,9 @@ const express = require("express");
 let Quote = require('../models/model')
 
 module.exports = app => {
+  app.get('/',function(req,res){
+    res.sendfile('index.html')
+  })
 
   app.get('/quotes', function (req, res) {
     Quote.find((err, quotes) => {
