@@ -23,7 +23,7 @@ const searchByName = (quotes) => {
 
 }
 const random = () => {
-    fetch("http://localhost:5000/quotes")
+    fetch('/quotes/')
         .then(response => response.json())
         .then(json => getRandomQuote(json))
 }
