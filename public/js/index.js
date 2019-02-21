@@ -58,10 +58,3 @@ document.querySelector('#add').addEventListener('click', function (e) {
     document.getElementById(`addedQuote`).innerHTML = quote;
     document.getElementById(`addedFilm`).innerHTML = `- ${film}`;
 })
-
-const addClassStyle=()=>{
-    let card= document.querySelectorAll("#card");
-    console.log(card)
-   card.className += ' additionalClass'
-    // p.classList.add("card");
-}
