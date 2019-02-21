@@ -1,10 +1,10 @@
 #USED TECHNOLOGIES:
--MongoDB
--Mongoose
--express
--CSS
--HTML
--Node.JS
+*MongoDB
+*Mongoose
+*express
+*CSS
+*HTML
+*Node.JS
 
 
 
