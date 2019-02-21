@@ -37,8 +37,7 @@ header,
 menu,
 nav,
 section,
-summary
-{
+summary {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -267,6 +266,12 @@ sup {
 	font-size: 0.8rem;
 	position: relative;
 	top: -0.5rem;
+}
+
+.addStyle {
+	font-style: italic;
+	margin: 0 0 2rem 0;
+	padding: 0.5rem 0 0.5rem 2rem;
 }
 
 blockquote {

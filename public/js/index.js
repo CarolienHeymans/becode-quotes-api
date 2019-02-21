@@ -29,8 +29,13 @@ const random = () => {
 }
 const getRandomQuote = (quote) => {
 
-    console.log(quote)
-    document.getElementById(`randomQuote`).innerHTML = quote.quote
+    console.log(quote);
+    let randomQuote = quote.quote;
+    let randomName = quote.name;
+    let randomBook = quote.book;
+    document.getElementById(`randomQuote`).innerHTML = randomQuote;
+    document.getElementById(`randomNameBook`).innerHTML = `- ${randomName}, Harry Potter and ${randomBook}`;
+   
 }
 //add quote
 document.querySelector('#add').addEventListener('click', function (e) {
@@ -51,4 +56,9 @@ document.querySelector('#add').addEventListener('click', function (e) {
     }
     console.log(quote + name + book + "OK")
     fetch('/quotes', addQuote)
+    document.getElementById(`addedQuote`).innerHTML =quote;
+    document.getElementById(`addedNameBook`).innerHTML = `- ${name}, Harry Potter and ${book}`;
 })
+const addstyle=()=>{
+    div.classList.add("addStyle")
+}
