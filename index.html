@@ -30,26 +30,27 @@
                 <input type="text" class="form-control" id="search" placeholder="Film title">
                 <br>
                 <button type="button" class="btn btn-secondary" onclick="Search()">Search by film title</button> -->
-                <button type="button" class="btn btn-secondary" onclick="random()">Random</button>
+                <button type="button" class="btn btn-secondary" onclick="addClassStyle()"id="random">Random</button>
                 <br>
             </form>
         </div>
-
-
-        <p class="major" id="randomQuote"></p>
-        <p class="major" id="randomNameFilm"></p>
-        <!-- <ul class="list-group" id="searchList"> </ul> -->
+        <div >
+            <div class="card-body">
+                <p id="randomQuote"></p>
+            </div>
+        </div>
 
         <div class="form-group">
             <h3>Add a quote</h3>
             <form>
                 <input type="text" class="form-control" id="addQuote" placeholder="Quote"><br>
                 <input type="text" class="form-control" id="addFilm" placeholder="Film title"><br>
-                <button type="button" class="btn btn-secondary" id="add"> Add</button>
+                <button type="button" class="btn btn-secondary" onclick="addClassStyle()"id="add"> Add</button>
                 <div>
-                    <p class="major" id="addedQuote"></p>
-                    <p class="major" id="addedFilm"></p>
-
+                    <div class="card-body">
+                        <p id="addedQuote"></p>
+                        <p id="addedFilm"></p>
+                    </div>
                 </div>
             </form>
         </div>

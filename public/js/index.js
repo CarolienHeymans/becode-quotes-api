@@ -22,11 +22,11 @@
 //     }
 // }
 //random
-const random = () => {
+document.querySelector('#random').addEventListener('click', function (e) {
     fetch('/quotes/random')
         .then(response => response.json())
         .then(json => getRandomQuote(json))
-}
+
 const getRandomQuote = (quote) => {
 
     console.log(quote);
@@ -36,7 +36,7 @@ const getRandomQuote = (quote) => {
     document.getElementById(`randomQuote`).innerHTML = `${randomQuote} -${randomFilm}`;
    
 
-}
+}})
 //add quote
 document.querySelector('#add').addEventListener('click', function (e) {
     let quote = document.getElementById("addQuote").value;
@@ -58,3 +58,10 @@ document.querySelector('#add').addEventListener('click', function (e) {
     document.getElementById(`addedQuote`).innerHTML = quote;
     document.getElementById(`addedFilm`).innerHTML = `- ${film}`;
 })
+
+const addClassStyle=()=>{
+    let card= document.querySelectorAll("#card");
+    console.log(card)
+   card.className += ' additionalClass'
+    // p.classList.add("card");
+}
