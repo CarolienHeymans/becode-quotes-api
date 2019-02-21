@@ -1,4 +1,4 @@
-# USED TECHNOLOGIES:
+# Used technologies:
 * MongoDB
 * Mongoose
 * Express
@@ -8,7 +8,7 @@
 
 
 
-# API ENDPOINTS:
+# API endpoints:
 
 URL | HTTP request| POST body| Result
 --- | ------------| ---------| -------
