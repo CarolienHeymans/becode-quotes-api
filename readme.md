@@ -1,14 +1,14 @@
-#USED TECHNOLOGIES:
-*MongoDB
-*Mongoose
-*express
-*CSS
-*HTML
-*Node.JS
+# USED TECHNOLOGIES:
+* MongoDB
+* Mongoose
+* Express
+* CSS
+* HTML
+* Node.JS
 
 
 
-#API ENDPOINTS:
+# API ENDPOINTS:
 
 URL | HTTP request| POST body| Result
 --- | ------------| ---------| -------
