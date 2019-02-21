@@ -39,16 +39,16 @@ module.exports = app => {
       res.sendStatus(200);
     });
   });
-  app.get("/quotes/:name", (req, res) => {
-    // get the Quote by name
-    Quote.find({
-      name: req.params.name
-    }, function (err, Quote) {
-      if (err) throw err;
-      //console.log(Quote);
-      res.send(Quote);
-    });
-  });
+  // app.get("/quotes/:name", (req, res) => {
+  //   // get the Quote by name
+  //   Quote.find({
+  //     name: req.params.name
+  //   }, function (err, Quote) {
+  //     if (err) throw err;
+  //     //console.log(Quote);
+  //     res.send(Quote);
+  //   });
+  // });
   app.get("/quotes/:quoteId", (req, res) => {
     // get the Quote by id
     Quote.find({
