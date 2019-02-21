@@ -14,7 +14,6 @@ URL | HTTP request| POST body| Result
 --- | ------------| ---------| -------
 https://quotes-exercise-ch.herokuapp.com/quotes | GET| /| returns all entries
 https://quotes-exercise-ch.herokuapp.com/quotes/:id| GET| /| returns single entry by id
-https://quotes-exercise-ch.herokuapp.com/quotes/name/:name | GET| /| returns single entry by name 
 https://quotes-exercise-ch.herokuapp.com/quotes/random | GET| /| returns a random entry
 https://quotes-exercise-ch.herokuapp.com/quotes| POST|JSON string| create new entry
 https://quotes-exercise-ch.herokuapp.com/quotes/:id| PUT| JSON string| update existing entry

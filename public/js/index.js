@@ -1,26 +1,26 @@
-const wrapWithTag = (quote, name, book, tagname) => `<${tagname}>${quote} - ${name} - ${book}</${tagname}>`;
-// search by name
-const Search = () => {
+// const wrapWithTag = (quote,film, tagname) => `<${tagname}>${quote} - ${film} </${tagname}>`;
+// // search by film
+// const Search = () => {
 
-    let searchName = document.getElementById("search").value
-    fetch('/quotes/name/' + searchName)
-        .then(response => response.json())
-        .then(json => searchByName(json))
-}
-const searchByName = (quotes) => {
-    let list = quotes;
-    let listText = [];
-    console.log(list);
-    for (let instance of list) {
-        let quote = instance.quote
-        let name = instance.name
-        let book = instance.book
-        let quoteText = wrapWithTag(quote, name, book, `li`)
-        console.log(quoteText)
-        listText += quoteText
-        document.getElementById(`searchList`).innerHTML = listText
-    }
-}
+//     let searchName = document.getElementById("search").value
+//     fetch('/quotes/' + searchName)
+//            .then(response => response.json())
+//         .then(json => searchByFilm(json))
+//         console.log(json)
+// }  
+// const searchByFilm = (quotes) => {
+//     let list = quotes;
+//     let listText = [];
+//     console.log(list);
+//     for (let instance of list) {
+//         let quote = instance.quote
+//         let film = instance.film
+//         let quoteText = wrapWithTag(quote, film, `li`)
+//         console.log(quoteText)
+//         listText += quoteText
+//         document.getElementById(`searchList`).innerHTML = listText
+//     }
+// }
 //random
 const random = () => {
     fetch('/quotes/random')
@@ -31,17 +31,16 @@ const getRandomQuote = (quote) => {
 
     console.log(quote);
     let randomQuote = quote.quote;
-    let randomName = quote.name;
-    let randomBook = quote.book;
-    document.getElementById(`randomQuote`).innerHTML = randomQuote;
-    document.getElementById(`randomNameBook`).innerHTML = `- ${randomName}, Harry Potter and ${randomBook}`;
+
+    let randomFilm = quote.film;
+    document.getElementById(`randomQuote`).innerHTML = `${randomQuote} -${randomFilm}`;
    
+
 }
 //add quote
 document.querySelector('#add').addEventListener('click', function (e) {
     let quote = document.getElementById("addQuote").value;
-    let name = document.getElementById("addName").value;
-    let book = document.getElementById("addBook").value;
+    let film = document.getElementById("addFilm").value;
 
     const addQuote = {
         method: 'POST',
@@ -50,15 +49,12 @@ document.querySelector('#add').addEventListener('click', function (e) {
         },
         body: JSON.stringify({
             "quote": `${quote}`,
-            "name": `${name}`,
-            "book": `${book}`
+
+            "film": `${film}`
         })
     }
-    console.log(quote + name + book + "OK")
+    console.log(quote + name + film + "OK")
     fetch('/quotes', addQuote)
-    document.getElementById(`addedQuote`).innerHTML =quote;
-    document.getElementById(`addedNameBook`).innerHTML = `- ${name}, Harry Potter and ${book}`;
+    document.getElementById(`addedQuote`).innerHTML = quote;
+    document.getElementById(`addedFilm`).innerHTML = `- ${film}`;
 })
-const addstyle=()=>{
-    div.classList.add("addStyle")
-}

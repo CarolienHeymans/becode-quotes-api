@@ -31,8 +31,7 @@ module.exports = app => {
 //add quote
     let newQuote = new Quote({
       quote: req.body.quote,
-      name: req.body.name,
-      book: req.body.book
+      film: req.body.film
     });
 
     newQuote.save(function (err) {
@@ -41,16 +40,16 @@ module.exports = app => {
       res.sendStatus(200);
     });
   });
-  app.get("/quotes/name/:name", (req, res) => {
-    // get the Quote by name
-    Quote.find({
-      name: req.params.name
-    }, function (err, Quote) {
-      if (err) throw err;
-      //console.log(Quote);
-      res.send(Quote);
-    });
-  });
+  // app.get("/quotes/:film", (req, res) => {
+  //   // get the Quote by name
+  //   Quote.find({
+  //     name: req.params.film
+  //   }, function (err, Quote) {
+  //     if (err) throw err;
+  //     //console.log(Quote);
+  //     res.send(Quote);
+  //   });
+  // });
   app.get("/quotes/:quoteId", (req, res) => {
     // get the Quote by id
     Quote.find({
@@ -68,8 +67,7 @@ module.exports = app => {
       _id: req.params.quoteId
     }, {
       quote: req.body.quote,
-      name: req.body.name,
-      book: req.body.book
+      film: req.body.film
     }, function (err, Quote) {
       if (err) throw err;
       console.log(Quote, 'Updated');

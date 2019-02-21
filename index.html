@@ -9,59 +9,60 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Harry Potter Quotes</title>
+    <title>Film Quotes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="style/css/main.css" />
     <noscript>
         <link rel="stylesheet" href="style/css/noscript.css" /></noscript>
 </head>
 
 <body>
-    <div id="wrapper" class="divided">
+    <div id="wrapper">
 
-        <!-- One -->
-        <section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
-            <div class="content">
-                <h1>Inspirational Harry Potter Quotes</h1>
+        <h1>Film Quotes</h1>
 
-                <form>
-                    <br>
-                    <input type="text" id="search">
-                    <br>
-                    <button type="button" onclick="Search()">Search by name</button>
-                    <button type="button" onclick="random()">Get a random quote</button>
-                    <br>
-                </form>
-            </div>
-            <div class="image">
-                <blockquote>
-                    <p class="major" id="randomQuote"></p>
-                    <p class="major" id="randomNameBook"></p>
-                    <ul class="actions stacked" id="searchList"> </ul>
-                </blockquote>
-        </section>
-        <!-- Spotlight -->
-        <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in"
-            id="first">
-            <div class="content">
-                <h2>Add a quote</h2>
-                <form>
-                    <input type="text" id="addQuote" placeholder="Quote"><br>
-                    <input type="text" id="addName" placeholder="Name"><br>
-                    <input type="text" id="addBook" placeholder="Harry Potter and ..."><br>
-                    <button type="button" id="add"> Add</button>
-                    <div>
-                        <p class="major" id="addedQuote"></p>
-                        <p class="major" id="addedNameBook"></p>
-                   
-                    </div>
-                    <!-- <button type="button">Delete</button>
-                <input type="number" id="deleteID" placeholder="Quote ID"> -->
-                </form>
-            </div>
+        <div class="form-group">
+            <h3>Get a quote</h3>
+            <form>
+                <!-- <br>
+                <input type="text" class="form-control" id="search" placeholder="Film title">
+                <br>
+                <button type="button" class="btn btn-secondary" onclick="Search()">Search by film title</button> -->
+                <button type="button" class="btn btn-secondary" onclick="random()">Random</button>
+                <br>
+            </form>
+        </div>
 
-        </section>
+
+        <p class="major" id="randomQuote"></p>
+        <p class="major" id="randomNameFilm"></p>
+        <!-- <ul class="list-group" id="searchList"> </ul> -->
+
+        <div class="form-group">
+            <h3>Add a quote</h3>
+            <form>
+                <input type="text" class="form-control" id="addQuote" placeholder="Quote"><br>
+                <input type="text" class="form-control" id="addFilm" placeholder="Film title"><br>
+                <button type="button" class="btn btn-secondary" id="add"> Add</button>
+                <div>
+                    <p class="major" id="addedQuote"></p>
+                    <p class="major" id="addedFilm"></p>
+
+                </div>
+            </form>
+        </div>
+
+
     </div>
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="js/index.js" async defer></script>
 </body>
 
