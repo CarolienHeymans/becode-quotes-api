@@ -75,7 +75,7 @@ const searchByFilm = (quotes) => {
      for (let instance of list) {
         let quote = instance.quote
         let film = instance.film
-        let quoteText = wrapWithTag(quote, film, `li`)
+        let quoteText = wrapWithTag(quote, film, `li class:"list-group-item"`)
         console.log(quoteText)
         listText += quoteText
         document.getElementById(`quoteList`).innerHTML = listText

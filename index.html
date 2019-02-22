@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
     <link rel="stylesheet" href="style/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
     <noscript>
         <link rel="stylesheet" href="style/css/noscript.css" /></noscript>
 </head>
@@ -29,26 +30,21 @@
                 <br>
                 <input type="text" class="form-control" id="searchFilm" placeholder="Search by Film title">
                 <br>
-                <button type="button" class="btn btn-secondary" id="search" onclick="searchByFilm" >Search </button>
+                <button type="button" class="btn btn-secondary" id="search" onclick="searchByFilm">Search </button>
                 <button type="button" class="btn btn-secondary" id="random">Get a random quote</button>
                 <br>
             </form>
         </div>
-        <div>
-            <div class="card-body">
-                <p id="randomQuote"></p>
-                <ul id="quoteList">
-
-                </ul>
-            </div>
+        <ul class="list-group" id="quoteList"></ul>
+        <div class="card-body">
+            <p id="randomQuote"></p>
         </div>
-
         <div class="form-group">
             <h3>Add a quote</h3>
             <form>
                 <input type="text" class="form-control" id="addQuote" placeholder="Quote"><br>
                 <input type="text" class="form-control" id="addFilm" placeholder="Film title"><br>
-                <button type="button" class="btn btn-secondary" onclick="addClassStyle()"id="add"> Add</button>
+                <button type="button" class="btn btn-secondary" onclick="addClassStyle()" id="add"> Add</button>
                 <div>
                     <div class="card-body">
                         <p id="addedQuote"></p>
