@@ -25,10 +25,8 @@ module.exports = app => {
       res.send(randomQuote);
     })
   });
-
-
   app.post("/quotes", (req, res) => {
-//add quote
+    //add quote
     let newQuote = new Quote({
       quote: req.body.quote,
       film: req.body.film
@@ -40,16 +38,17 @@ module.exports = app => {
       res.sendStatus(200);
     });
   });
-  // app.get("/quotes/:film", (req, res) => {
-  //   // get the Quote by name
-  //   Quote.find({
-  //     name: req.params.film
-  //   }, function (err, Quote) {
-  //     if (err) throw err;
-  //     //console.log(Quote);
-  //     res.send(Quote);
-  //   });
-  // });
+  app.get('/quotes/film/:film', (req, res)=> {
+    const filmSearch=req.params.film
+    console.log(filmSearch)
+    Quote.find({
+    film: {$regex: filmSearch, $options:'i'}
+    },  function (err, quotes) {
+      if (err) throw err;   
+            console.log(quotes);
+      res.send(quotes);
+    });
+  });
   app.get("/quotes/:quoteId", (req, res) => {
     // get the Quote by id
     Quote.find({

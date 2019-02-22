@@ -1,4 +1,4 @@
-// const wrapWithTag = (quote,film, tagname) => `<${tagname}>${quote} - ${film} </${tagname}>`;
+const wrapWithTag = (quote, film, tagname) => `<${tagname}>${quote} - ${film} </${tagname}>`;
 // // search by film
 // const Search = () => {
 
@@ -27,16 +27,17 @@ document.querySelector('#random').addEventListener('click', function (e) {
         .then(response => response.json())
         .then(json => getRandomQuote(json))
 
-const getRandomQuote = (quote) => {
+    const getRandomQuote = (quote) => {
 
-    console.log(quote);
-    let randomQuote = quote.quote;
+        console.log(quote);
+        let randomQuote = quote.quote;
 
-    let randomFilm = quote.film;
-    document.getElementById(`randomQuote`).innerHTML = `${randomQuote} -${randomFilm}`;
-   
+        let randomFilm = quote.film;
+        document.getElementById(`randomQuote`).innerHTML = `${randomQuote} -${randomFilm}`;
 
-}})
+
+    }
+})
 //add quote
 document.querySelector('#add').addEventListener('click', function (e) {
     let quote = document.getElementById("addQuote").value;
@@ -58,3 +59,27 @@ document.querySelector('#add').addEventListener('click', function (e) {
     document.getElementById(`addedQuote`).innerHTML = quote;
     document.getElementById(`addedFilm`).innerHTML = `- ${film}`;
 })
+
+
+const handleSearchClick = () => {
+    let film = document.getElementById("searchFilm").value;
+    console.log(film)
+    fetch(`/quotes/film/` + film)
+        .then(response => response.json())
+        .then(json => searchByFilm(json))
+}
+
+const searchByFilm = (quotes) => {
+    let list=quotes
+    let listText = [];
+     for (let instance of list) {
+        let quote = instance.quote
+        let film = instance.film
+        let quoteText = wrapWithTag(quote, film, `li`)
+        console.log(quoteText)
+        listText += quoteText
+        document.getElementById(`quoteList`).innerHTML = listText
+    }
+}
+
+document.getElementById('search').addEventListener('click', handleSearchClick)
